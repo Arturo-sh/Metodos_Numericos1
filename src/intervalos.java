@@ -38,7 +38,7 @@ public class intervalos {
 
     public void grafica(int A, int B, int opc) {
         char izq = 0, der = 0;
-        
+
         switch (opc) {
             case 1:
                 izq = der = '•';
@@ -58,7 +58,7 @@ public class intervalos {
                 System.out.println("Algo salio mal :( ");
                 break;
         }
-        
+
         System.out.println("\nGrafica:");
         for (int j = 0; j < 3; j++) {
             for (int i = A - 1; i <= B + 1; i++) {
@@ -95,74 +95,47 @@ public class intervalos {
     }
 
     public void infinito(int A, int opc) {
-        int fin;
+        int infinito = 0;
         char marca = '•';
 
         switch (opc) {
             case 5:
-                fin = A - 8;
-                System.out.println("\nGrafica:");
-                for (int j = 0; j < 3; j++) {
-                    for (int i = fin; i <= A + 1; i++) {
-                        if (j == 0) {
-                            if (i == A) {
-                                System.out.print(" A");
-                            } else {
-                                System.out.print(" " + i);
-                            }
-                        }
-                        if (j == 1) {
-                            if (i == fin) {
-                                System.out.print("<-");
-                            } else if (i == A + 1) {
-                                System.out.print("-> X");
-                            } else {
-                                System.out.print("---");
-                            }
-                        }
-                        if (j == 2) {
-                            if (i == A) {
-                                System.out.print(" " + marca);
-                            } else {
-                                System.out.print(" " + i);
-                            }
-                        }
-                    }
-                    System.out.println();
-                }
+                infinito = A - 8;
                 break;
             case 6:
-                fin = A + 8;
-                System.out.println("\nGrafica:");
-                for (int j = 0; j < 3; j++) {
-                    for (int i = A - 1; i <= fin; i++) {
-                        if (j == 0) {
-                            if (i == A) {
-                                System.out.print(" A");
-                            } else {
-                                System.out.print(" " + i);
-                            }
-                        }
-                        if (j == 1) {
-                            if (i == A - 1) {
-                                System.out.print("<-");
-                            } else if (i == fin) {
-                                System.out.print("-> X");
-                            } else {
-                                System.out.print("---");
-                            }
-                        }
-                        if (j == 2) {
-                            if (i == A) {
-                                System.out.print(" " + marca);
-                            } else {
-                                System.out.print(" " + i);
-                            }
-                        }
-                    }
-                    System.out.println();
-                }
+                infinito = A;
+                A += 8;
                 break;
+        }
+
+        System.out.println("\nGrafica:");
+        for (int j = 0; j < 3; j++) {
+            for (int i = infinito; i <= A + 1; i++) {
+                if (j == 0) {
+                    if (i == A) {
+                        System.out.print(" A");
+                    } else {
+                        System.out.print(" " + i);
+                    }
+                }
+                if (j == 1) {
+                    if (i == infinito) {
+                        System.out.print("<-");
+                    } else if (i == A + 1) {
+                        System.out.print("-> X");
+                    } else {
+                        System.out.print("---");
+                    }
+                }
+                if (j == 2) {
+                    if (i == A) {
+                        System.out.print(" " + marca);
+                    } else {
+                        System.out.print(" " + i);
+                    }
+                }
+            }
+            System.out.println();
         }
     }
 }
