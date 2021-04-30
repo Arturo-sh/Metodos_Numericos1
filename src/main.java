@@ -42,14 +42,16 @@ public class main {
 
                 salida = JOptionPane.showInputDialog(null, "Desea seguir usando el programa? (s/n): ").charAt(0);
 
-                if (salida != 's' || salida != 'S') {
+                if (salida != 's' && salida != 'S') {
                     JOptionPane.showMessageDialog(null, "Gracias por usar este software :) ");
                 }
             } while (salida == 's' || salida == 'S');
         } catch (NumberFormatException e) {
             System.err.println("Excepcion de tipo: " + e);
+        } catch (StringIndexOutOfBoundsException e) {
+            System.err.println("Excepcion de tipo: " + e);
         } finally {
-            System.out.println("Programa finalizado con exito!");
+            System.out.println("\nPrograma finalizado con exito!");
         }
     }
 }
